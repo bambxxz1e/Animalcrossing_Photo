@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start:api": "node src/db.js",
-    "start": "node src/db.js",
+    "start:api": "node server.js",
+    "start": "node server.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

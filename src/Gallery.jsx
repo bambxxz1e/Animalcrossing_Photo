@@ -8,6 +8,8 @@ export default function Gallery() {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   const handleDelete = async (id) => {
     if (!confirm('정말 이 사진을 삭제하시겠어요?')) return;
 
@@ -15,7 +17,7 @@ export default function Gallery() {
     setStickers(prev => prev.filter(p => Number(p.id) !== Number(id)));
 
     try {
-      const res = await fetch(`http://localhost:3001/photos/${id}`, { method: 'DELETE' });
+      const res = await fetch(`${BASE_URL}/photos/${id}`, { method: 'DELETE' });
 
       if (res.ok) {
         return;
@@ -47,7 +49,7 @@ export default function Gallery() {
     const fetchGalleryData = async () => {
       try {
         // 데이터 요청
-        const response = await fetch('http://localhost:3001/photos');
+        const response = await fetch(`${BASE_URL}/photos`);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

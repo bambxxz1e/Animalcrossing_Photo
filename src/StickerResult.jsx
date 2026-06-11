@@ -23,6 +23,8 @@ export default function StickerResult() {
   const navigate = useNavigate();
   const images = state?.images || [];
   const cuts = state?.cuts || images.length || 4; 
+
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
   
   const villagerName = state?.villager?.name || "주민 없음";
 
@@ -41,9 +43,9 @@ export default function StickerResult() {
   
   
   const uploadImageToServer = async (imageDataUrl, characterName) => {
-  console.log(`서버(http://localhost:3001/upload)에 [${characterName}] 이미지 업로드 시도...`);
+  console.log(`서버(${BASE_URL}/upload)에 [${characterName}] 이미지 업로드 시도...`);
       
-  const response = await fetch('http://localhost:3001/upload', {
+  const response = await fetch(`${BASE_URL}/upload`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
