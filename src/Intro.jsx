@@ -1,4 +1,4 @@
-import "./Intro.css";
+import "./intro.css";
 import { useNavigate } from "react-router-dom";
 import takePhotoImg from "./img/take_a_photo.png";
 import galleryPhotoImg from "./img/gallery_photo.png";
