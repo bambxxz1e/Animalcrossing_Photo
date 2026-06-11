@@ -27,3 +27,5 @@ dist-ssr
 .env.bak
 src/EmailTest.html
 uploads
+.vercel
+.env*
