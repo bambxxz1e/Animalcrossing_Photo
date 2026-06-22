@@ -1,13 +1,8 @@
 import mysql from "mysql2/promise";
-import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
 import dotenv from "dotenv";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 // .env 경로 설정
-dotenv.config({ path: resolve(__dirname, "./.env") });
+dotenv.config();
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST ?? "localhost",
