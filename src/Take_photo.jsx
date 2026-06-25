@@ -31,7 +31,7 @@ export default function Take_photo(){
 
 			const villagerImg = new Image();
 			villagerImg.crossOrigin = "anonymous";
-			villagerImg.src = `/image-proxy${new URL(villager.image_url).pathname}`;
+			villagerImg.src = `https://animalcrossing-photo.onrender.com/image-proxy${new URL(villager.image_url).pathname}`;
 			await new Promise((res) => (villagerImg.onload = res));
 
 			const canvas = document.createElement("canvas");
