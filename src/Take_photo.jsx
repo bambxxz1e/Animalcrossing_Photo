@@ -122,7 +122,7 @@ export default function Take_photo(){
 				/>
 
 				<div className={styles.villagerOverlay}>
-					<img src={`/image-proxy${new URL(villager.image_url).pathname}`}
+					<img src={`https://animalcrossing-photo.onrender.com/image-proxy${new URL(villager.image_url).pathname}`}
 						alt={villager.name}
 						crossOrigin="anonymous" />
 				</div>
