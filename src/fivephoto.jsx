@@ -15,7 +15,7 @@ function Fivephoto() {
 
   const fetchVillager = async () => {
     try {
-      const response = await axios.get("https://api.nookipedia.com/villagers", {
+      const response = await axios.get("https://animalcrossing-photo.onrender.com/api/villagers", {
         headers: {
           "X-API-KEY": "e25f17a9-12b3-4033-8f59-da299adfe32a",
           "Accept-Version": "1.0.0",
