@@ -50,7 +50,10 @@ app.get("/api/villagers", async (req, res) => {
 // ===================== 이미지 프록시 =====================
 app.get(/^\/image-proxy\/(.+)/, async (req, res) => {
   const imgPath = req.params[0];
-  const imageUrl = `https://dodo.ac/np/images/${imgPath}`;
+
+  const imageUrl = `https://dodo.ac/${decodeURIComponent(imgPath)}`;
+
+  console.log(imageUrl);
 
   try {
     const response = await axios.get(imageUrl, {
@@ -60,7 +63,8 @@ app.get(/^\/image-proxy\/(.+)/, async (req, res) => {
     res.set("Content-Type", response.headers["content-type"]);
     res.send(response.data);
   } catch (err) {
-    console.error("이미지 로드 실패:", err.message);
+    console.error(err.response?.status);
+    console.error(err.response?.data);
     res.status(500).send("이미지 로드 실패");
   }
 });
