@@ -8,7 +8,7 @@ export default function Gallery() {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
-  const BASE_URL = "https://animalcrossing-photo.onrender.com";
+  const BASE_URL = import.meta.env.VITE.BASE_URL;
 
   const handleDelete = async (id) => {
     if (!confirm('정말 이 사진을 삭제하시겠어요?')) return;

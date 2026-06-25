@@ -24,7 +24,7 @@ export default function StickerResult() {
   const images = state?.images || [];
   const cuts = state?.cuts || images.length || 4; 
 
-  const BASE_URL = 'https://animalcrossing-photo.onrender.com';
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
   
   const villagerName = state?.villager?.name || "주민 없음";
 
